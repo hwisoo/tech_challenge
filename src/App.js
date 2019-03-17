@@ -6,11 +6,14 @@ import Header from "./components/Header";
 import PostForm from "./components/PostForm";
 
 class App extends Component {
+  addPost = post => {
+    console.table(post);
+  };
   render() {
     return (
       <div className="App">
         <Header />
-        <PostForm />
+        <PostForm addPost={this.addPost} />
       </div>
     );
   }
