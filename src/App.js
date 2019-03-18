@@ -16,7 +16,7 @@ class App extends Component {
   }
   addPost = post => {
     this.setState({
-      posts: [...this.state.posts, post]
+      posts: [post, ...this.state.posts]
     });
     console.log(this.state.posts);
   };

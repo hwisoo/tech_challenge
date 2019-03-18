@@ -1,11 +1,11 @@
 * {
-  background-color: #282c34;
+  background-color: #3c0057;
   color: white;
 }
 
 .App {
   text-align: center;
-  background-color: #282c34;
+  background-color: #3c0057;
   color: white;
 }
 
@@ -16,7 +16,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #3c0057;
   min-height: 20vh;
   display: flex;
   flex-direction: column;
@@ -24,6 +24,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  border-bottom: 1px solid #fff;
 }
 
 .App-link {
@@ -40,13 +41,24 @@
 }
 
 .main-content {
+  margin-top: 30px;
   display: grid;
   grid-template-columns: 1fr 2fr;
   margin-right: 30px;
 }
 
+input,
+textarea {
+  margin-bottom: 20px;
+}
+
 .card {
   margin-bottom: 20px;
+}
+
+.card span.user {
+  text-decoration: underline;
+  margin-right: 40px;
 }
 
 .btn-dark {

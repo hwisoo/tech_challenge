@@ -8,9 +8,10 @@ export default class Post extends Component {
       <div>
         <div className="card">
           <div className="card-body">
-            <h5 className="card-title">{this.props.post.title}</h5>
             <p className="card-text">Comment: {this.props.post.comment}</p>
-            <span>By {this.props.post.name}</span>{" "}
+            <span>
+              By <span className="user">{this.props.post.name}</span>{" "}
+            </span>
             <span>{this.props.post.time}</span>
           </div>
         </div>

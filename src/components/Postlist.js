@@ -5,7 +5,7 @@ export default class Postlist extends Component {
   render() {
     return (
       <div>
-        <h3>Postlist</h3>
+        <h3>Comments</h3>
         {this.props.posts.map(post => (
           <Post
             post={post}
