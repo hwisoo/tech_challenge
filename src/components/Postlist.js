@@ -1,9 +1,20 @@
 import React from "react";
-
-import React, { Component } from "react";
-
+import { Component } from "react";
+import Post from "./Post";
 export default class Postlist extends Component {
   render() {
-    return <div />;
+    return (
+      <div>
+        <h3>Postlist</h3>
+        {this.props.posts.map(post => (
+          <Post
+            post={post}
+            key={post.id}
+            addLikes={this.props.addLikes}
+            data={this.props.posts}
+          />
+        ))}
+      </div>
+    );
   }
 }

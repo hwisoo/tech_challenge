@@ -1,3 +1,8 @@
+* {
+  background-color: #282c34;
+  color: white;
+}
+
 .App {
   text-align: center;
   background-color: #282c34;
@@ -32,4 +37,22 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.main-content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  margin-right: 30px;
+}
+
+.card {
+  margin-bottom: 20px;
+}
+
+.btn-dark {
+  border: 2px solid #fff;
+}
+
+.btn-dark:hover {
+  border: 3px solid #fff;
 }

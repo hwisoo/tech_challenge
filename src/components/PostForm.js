@@ -1,24 +1,25 @@
 import React, { Component } from "react";
+import uuid from "uuid";
 
 export default class PostForm extends Component {
   nameRef = React.createRef();
   titleRef = React.createRef();
-  contentRef = React.createRef();
+  commentRef = React.createRef();
 
   createPost = event => {
     event.preventDefault();
     const post = {
-      id: "",
+      id: uuid.v4(),
       name: this.nameRef.current.value,
       title: this.titleRef.current.value,
-      content: this.contentRef.current.value,
+      comment: this.commentRef.current.value,
       likes: 0,
       time: `Posted: ${new Date().toDateString()} - ${new Date().getHours()} : ${new Date().getMinutes()} : ${new Date().getSeconds()}`
     };
     this.props.addPost(post);
     this.nameRef.current.value = "";
     this.titleRef.current.value = "";
-    this.contentRef.current.value = "";
+    this.commentRef.current.value = "";
   };
   render() {
     return (
@@ -26,23 +27,24 @@ export default class PostForm extends Component {
         <h3>Add New Post</h3>
         <label htmlFor="name">User First Name:</label>
         <br />
-        <input ref={this.nameRef} type="text" />
+        <input ref={this.nameRef} type="text" required />
         <br />
         <label htmlFor="title">Title:</label>
         <br />
         <input ref={this.titleRef} type="text" />
         <br />
-        <label htmlFor="content">Content: </label>
+        <label htmlFor="comment">Comment: </label>
         <br />
         <textarea
-          ref={this.contentRef}
-          name="content"
-          id="content"
+          ref={this.commentRef}
+          name="comment"
+          id="comment"
           cols="30"
           rows="5"
+          required
         />{" "}
         <br />
-        <button className="btn btn-lg btn-primary" type="submit">
+        <button className="btn btn-lg btn-dark" type="submit">
           Submit
         </button>
       </form>
