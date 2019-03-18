@@ -1,11 +1,11 @@
 * {
-  background-color: #3c0057;
+  background-color: #454545;
   color: white;
 }
 
 .App {
   text-align: center;
-  background-color: #3c0057;
+  background-color: #454545;
   color: white;
 }
 
@@ -16,7 +16,7 @@
 }
 
 .App-header {
-  background-color: #3c0057;
+  background-color: #454545;
   min-height: 20vh;
   display: flex;
   flex-direction: column;
@@ -62,9 +62,13 @@ textarea {
 }
 
 .btn-dark {
-  border: 2px solid #fff;
+  background-color: #685393;
+  border-color: #685393;
+  border: 2px solid;
 }
 
 .btn-dark:hover {
-  border: 3px solid #fff;
+  background-color: #fff;
+  color: #685393;
+  border: 3px solid #685393;
 }

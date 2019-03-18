@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "../logo.svg";
-
+import Clock from "react-live-clock";
 export default function Header() {
   return (
     <header className="App-header">
@@ -8,6 +8,11 @@ export default function Header() {
         <img src={logo} className="App-logo" alt="logo" />
         Tech Challenge
       </h1>
+      <Clock
+        format={"dddd, h:mm:ss A"}
+        ticking={true}
+        timezone={"US/Pacific"}
+      />
     </header>
   );
 }
