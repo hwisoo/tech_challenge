@@ -5,6 +5,7 @@ import "./App.css";
 import Header from "./components/Header";
 import PostForm from "./components/PostForm";
 import Postlist from "./components/Postlist";
+import firebase from "./constants/firebaseConfig";
 
 class App extends Component {
   constructor(props) {
@@ -14,12 +15,33 @@ class App extends Component {
       posts: []
     };
   }
-  addPost = post => {
-    this.setState({
-      posts: [post, ...this.state.posts]
+
+  fetchData() {
+    const postsRef = firebase.database().ref("posts");
+    postsRef.on("value", snapshot => {
+      let posts = snapshot.val();
+      let newState = [];
+      for (let key in posts) {
+        newState.push({
+          id: key,
+          user: posts[key].name,
+          title: posts[key].title,
+          comment: posts[key].comment,
+          likes: posts[key].likes,
+          time: posts[key].time
+        });
+      }
+      this.setState({
+        posts: newState
+      });
     });
-    console.log(this.state.posts);
+  }
+
+  addPost = post => {
+    const postsRef = firebase.database().ref("posts");
+    postsRef.push(post);
   };
+
   render() {
     return (
       <div className="App">
