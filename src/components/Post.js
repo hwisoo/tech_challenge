@@ -13,6 +13,22 @@ export default class Post extends Component {
               By <span className="user">{this.props.post.name}</span>{" "}
             </span>
             <span>{this.props.post.time}</span>
+            <button
+              onClick={() => {
+                this.props.editPost(this.props.post);
+              }}
+              className="postButton btn btn-warning text-white"
+            >
+              Edit
+            </button>
+            <button
+              onClick={() => {
+                this.props.deletePost(this.props.post);
+              }}
+              className="postButton btn btn-danger"
+            >
+              Delete
+            </button>
           </div>
         </div>
       </div>

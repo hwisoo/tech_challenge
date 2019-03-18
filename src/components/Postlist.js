@@ -12,6 +12,7 @@ export default class Postlist extends Component {
             key={post.id}
             addLikes={this.props.addLikes}
             data={this.props.posts}
+            deletePost={this.props.deletePost}
           />
         ))}
       </div>

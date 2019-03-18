@@ -72,3 +72,7 @@ textarea {
   color: #685393;
   border: 3px solid #685393;
 }
+
+.postButton {
+  margin-left: 20px;
+}

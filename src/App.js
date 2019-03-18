@@ -24,8 +24,7 @@ class App extends Component {
       for (let key in posts) {
         newState.push({
           id: key,
-          user: posts[key].name,
-          title: posts[key].title,
+          name: posts[key].name,
           comment: posts[key].comment,
           likes: posts[key].likes,
           time: posts[key].time
@@ -37,9 +36,21 @@ class App extends Component {
     });
   }
 
+  componentWillMount() {
+    this.fetchData();
+  }
+
   addPost = post => {
     const postsRef = firebase.database().ref("posts");
     postsRef.push(post);
+  };
+
+  deletePost = post => {
+    const postRef = firebase.database().ref("posts/" + post.id);
+    postRef.remove();
+    setTimeout(() => {
+      this.fetchData();
+    }, 200);
   };
 
   render() {
@@ -48,7 +59,7 @@ class App extends Component {
         <Header />
         <div className="main-content">
           <PostForm addPost={this.addPost} />
-          <Postlist posts={this.state.posts} />
+          <Postlist posts={this.state.posts} deletePost={this.deletePost} />
         </div>
       </div>
     );
