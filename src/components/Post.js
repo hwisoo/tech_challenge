@@ -37,7 +37,7 @@ export default class Post extends Component {
           <div className="card-body">
             <p className="card-text">Comment: {this.props.post.comment}</p>
             <span>
-              By <span className="user">{this.props.post.name}</span>{" "}
+              By: <span className="user">{this.props.post.name}</span>{" "}
             </span>
             <span>{this.props.post.time}</span>
             <button

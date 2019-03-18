@@ -1,4 +1,4 @@
-* {
+body {
   background-color: #454545;
   color: white;
 }
@@ -54,6 +54,16 @@ textarea {
 
 .card {
   margin-bottom: 20px;
+  border-color: #685393;
+  border: 3px solid;
+}
+
+.card,
+.card-body,
+.card-text,
+.user {
+  background-color: #fff;
+  color: #685393;
 }
 
 .card span.user {

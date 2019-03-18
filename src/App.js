@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.css";
-
 import "./App.css";
 import Header from "./components/Header";
 import PostForm from "./components/PostForm";
@@ -15,6 +14,7 @@ class App extends Component {
     };
   }
 
+  // Fetch data from database, sort, and set to state
   fetchData() {
     const postsRef = firebase.database().ref("posts");
     postsRef.on("value", snapshot => {
@@ -43,6 +43,7 @@ class App extends Component {
     this.fetchData();
   }
 
+  // add new post to database
   addPost = post => {
     const postsRef = firebase.database().ref("posts");
     postsRef.push(post);
@@ -52,6 +53,7 @@ class App extends Component {
     }, 200);
   };
 
+  // edit post and update database
   editPost = post => {
     const postRef = firebase.database().ref("posts/" + post.id);
 
@@ -61,6 +63,7 @@ class App extends Component {
     }, 200);
   };
 
+  // delete post from database
   deletePost = post => {
     const postRef = firebase.database().ref("posts/" + post.id);
     postRef.remove();
