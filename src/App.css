@@ -89,3 +89,9 @@ textarea {
 .postButton:hover {
   border: 2px solid #fff;
 }
+
+.myName {
+  color: #8a6cc7;
+
+  text-shadow: #2c1a52 3px 5px 2px;
+}
