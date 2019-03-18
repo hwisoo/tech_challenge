@@ -8,6 +8,7 @@ export default function Header() {
         <img src={logo} className="App-logo" alt="logo" />
         Tech Challenge
       </h1>
+      <h4>James Cho</h4>
       <Clock
         format={"dddd, h:mm:ss A"}
         ticking={true}
