@@ -11,7 +11,6 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selected: "",
       posts: []
     };
   }
@@ -27,9 +26,13 @@ class App extends Component {
           name: posts[key].name,
           comment: posts[key].comment,
           likes: posts[key].likes,
-          time: posts[key].time
+          time: posts[key].time,
+          timeId: posts[key].timeId
         });
       }
+      newState.sort(function(a, b) {
+        return a.timeId > b.timeId ? -1 : b.timeId > a.timeId ? 1 : 0;
+      });
       this.setState({
         posts: newState
       });
@@ -43,6 +46,19 @@ class App extends Component {
   addPost = post => {
     const postsRef = firebase.database().ref("posts");
     postsRef.push(post);
+
+    setTimeout(() => {
+      this.fetchData();
+    }, 200);
+  };
+
+  editPost = post => {
+    const postRef = firebase.database().ref("posts/" + post.id);
+
+    postRef.update(post);
+    setTimeout(() => {
+      this.fetchData();
+    }, 200);
   };
 
   deletePost = post => {
@@ -59,7 +75,11 @@ class App extends Component {
         <Header />
         <div className="main-content">
           <PostForm addPost={this.addPost} />
-          <Postlist posts={this.state.posts} deletePost={this.deletePost} />
+          <Postlist
+            posts={this.state.posts}
+            editPost={this.editPost}
+            deletePost={this.deletePost}
+          />
         </div>
       </div>
     );

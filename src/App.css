@@ -76,3 +76,6 @@ textarea {
 .postButton {
   margin-left: 20px;
 }
+.postButton:hover {
+  border: 2px solid #fff;
+}

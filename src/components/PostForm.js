@@ -12,7 +12,8 @@ export default class PostForm extends Component {
       name: this.nameRef.current.value,
       comment: this.commentRef.current.value,
       likes: 0,
-      time: `Posted: ${new Date().toDateString()} - ${new Date().getHours()} : ${new Date().getMinutes()} : ${new Date().getSeconds()}`
+      time: `Posted: ${new Date().toDateString()} - ${new Date().getHours()} : ${new Date().getMinutes()} : ${new Date().getSeconds()}`,
+      timeId: Date.parse(new Date())
     };
     this.props.addPost(post);
     this.nameRef.current.value = "";
