@@ -81,8 +81,6 @@ HTML, CSS, Bootstrap, Javascript, React, create-react-app , react-live-clock , u
 
 ### License
 
-Images and Logo
-
 _MIT License_
 
 Copyright (c) 2019 **_James Cho_**
