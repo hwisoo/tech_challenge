@@ -1,3 +1,7 @@
+## Screen Shot
+
+![Alt text](src/tech.png?raw=true "demo")
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -66,3 +70,19 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+## Support and contact details
+
+Please contact me at hwisoocho@gmail.com
+
+## Technologies Used
+
+HTML, CSS, Bootstrap, Javascript, React, create-react-app , react-live-clock , uuid, firebase, Git,
+
+### License
+
+Images and Logo
+
+_MIT License_
+
+Copyright (c) 2019 **_James Cho_**
