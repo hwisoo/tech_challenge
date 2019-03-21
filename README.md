@@ -1,5 +1,5 @@
 ## Screen Shot
-Click to see demo [here] (https://tech-challenge-95355.firebaseapp.com/).
+Click to see demo here(https://tech-challenge-95355.firebaseapp.com/).
 
 ![Alt text](src/tech.png?raw=true "demo")
 
